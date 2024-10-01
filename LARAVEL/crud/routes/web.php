@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 
 Route::get('/home',[UserController::class,'index']);
+Route::post('/add-user',[UserController::class,'add_user']);

@@ -1,9 +1,13 @@
 <div class="form-container">
-    <form id="user_form">
-
+    @if (session('message'))
+        <span>{{session('message')}}</span>
+    @endif
+    {{ $sharedData }}
+    <form id="user_form" method="post" accept="application/json" action="{{url('add-user')}}">
+        @csrf
         <input type="hidden" name="user_id" value="">
         <div class="row">
-            <label>First Name</label>
+            <label>First Name </label>
             <input type="text" name="first_name" value="">
         </div>
         <div class="row">
